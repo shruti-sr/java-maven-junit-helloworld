@@ -51,8 +51,7 @@
   </dependencies>
 
   <build>
-    <plugins>
-      <plugin>
+    <plugins>      <plugin>
         <!-- Configures the compiler. -->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -62,8 +61,7 @@
           <target>1.6</target>
           <compilerArgs>
             <arg>-Xlint</arg>
-          </compilerArgs>
-        </configuration>
+          </compilerArgs>        </configuration>
       </plugin>
       <plugin>
         <!-- Unit tests are run by surefire. -->
@@ -104,11 +102,18 @@
   </reporting>
 
 <distributionManagement>
-    <repository>
-        <id>java-maven-junit</id>
-        <name>java-maven-junit</name>
-        <url>http://localhost:8081/repository/java-maven-junit/</url>
-    </repository>
+    
+   <repository> 
+        <id>deployment</id> 
+        <name>Nexus_Release</name> 
+        <url>http://54.255.200.65:8081/nexus/content/repositories/deployment/</url> 
+   </repository> 
+           
+   <snapshotRepository> 
+        <id>snapshot</id> 
+        <name>Nexus_Snapshot</name> 
+        <url>http://54.255.200.65:8081/nexus/content/repositories/snapshot/</url>      
+   </snapshotRepository>        
 </distributionManagement> 
 
 </project>
